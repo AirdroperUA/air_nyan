@@ -2,9 +2,9 @@
     "issues": [
         {
             "name": "main",
-            "channel_id": -1,
+            "channel_id": -1002169562874,
             "discussion_id": -1,
-            "bot_token": "token"
+            "bot_token": "1"
         },
         {
             "name": "tech",

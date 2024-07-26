@@ -83,15 +83,8 @@ class TelegramClient:
             return None
         issue = self.issues[issue_name]
         response = None
-        if len(photos) == 1:
-            response = self._send_photo(
-                text,
-                photos[0],
-                issue=issue,
-                reply_to=reply_to,
-                parse_mode=parse_mode
-            )
-        elif len(photos) > 1:
+        
+        if len(photos) > 2:
             response = self._send_photos(
                 text,
                 photos,
@@ -116,12 +109,7 @@ class TelegramClient:
                 parse_mode=parse_mode
             )
         else:
-            response = self._send_text(
-                text,
-                issue=issue,
-                reply_to=reply_to,
-                parse_mode=parse_mode
-            )
+            return None
 
         print("Send status code:", response.status_code)
         if response.status_code == 400 and "description" in response.text:
